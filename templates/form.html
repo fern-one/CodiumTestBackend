@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block content%}
+
+<h1 align="center" class="p-4">เพิ่มงาน</h1>
+<form action= "addForm" method= "post" >
+    {% csrf_token %}
+    
+    {{ form.as_p }}
+        <div align="center">
+                <input type="submit" value="บันทึกข้อมูล" class="btn btn-success" class="p-2 ">
+        </div>
+</form>
+
+{% endblock %}

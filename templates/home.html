@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block content%}
+
+<h1 align="center" class="p-3">Hello World</h1>
+<div class="p-5 ">
+    <h2 align="center" class="p-3 m-2">ข้อมูลทั้งหมด</h/>
+    <table class="table">
+        <thead class="thead-success">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+
+          </tr>
+        </thead>
+        <tbody>
+        {% for Post in Posts %}
+            <tr>
+            <th scope="row">{{Post.id}}</th>
+            <td>{{Post.name}}</td>
+            <td>{{Post.description}}</td>
+            <td><a class="nav-link" href="/edit">Edit</a></td>
+            <td><a class="nav-link" href="/delete">Delete</a></td>
+          </tr>
+        {% endfor%}
+        </tbody>
+      </table>
+</div>
+
+
+{%endblock%}
